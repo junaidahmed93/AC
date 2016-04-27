@@ -22,50 +22,8 @@
 
 
         <br> <br>
-
-        
-
-        <!--<span ng-repeat="(key,value) in generalJournal"> {{key}}
-            <tr class="tr-border" ng-repeat-start="(itemkey,itemvalue) in value">
-                    <td>{{key}}</td>
-                    <td>{{itemkey}}</td>
-                    <td>{{itemvalue.Debit}}</td>
-                    <td></td>
-
-                </tr>
-                <tr class="tr-border" ng-repeat-end>
-                    <td></td>
-                    <td> </td>
-                    <td></td>
-                    <td>{{ itemvalue.Credit }}</td>
-                </tr>
-            
-            </span>-->
-
-
-
-
-
-
-        <!--<span class="tr-border" ng-repeat="(key,value) in generalJournal">
-                <th>{{key}}</th>
-
-                <tr ng-repeat-start="(itemkey , itemvalue) in value">
-                    
-                    {{item}}
-                    <td>{{itemkey}}</td>
-                    <td>{{itemvalue.Debit}}</td>
-                    <td>{{itemvalue.Credit}}</td>
-                </tr>
-
-                <tr ng-repeat-end></tr>
-
-            </span>-->
-
-
-
         <table width="100%">
-           
+
             <tr ng-repeat="(key,value) in generalJournal">
                 <td>{{key}}</td>
                 <td>
@@ -75,63 +33,40 @@
                             <th width="200">Debit</th>
                             <th width="200">Credit</th>
                         </tr>
-                            <tr ng-repeat="(xkey,xvalue) in value">
-                                <td width="200">{{xkey}}</td>
-                                <td width="200">{{xvalue.Debit}}</td>
-                                <td width="200">{{xvalue.Credit}}</td>
-                            </tr>
-                        </table>  
-                  
-                </td>  
-                     <!--<ul>
-                    <li ng-repeat="(xkey,xvalue) in value"></li>
-                    <li>JUNAID</li>
-                    <li>{{xvalue.Debit}}</li>
-                    <li>{{xvalue.Credit}}</li>
-                </ul>-->
-                    
-                
-                
-               
-                <!--<td ng-repeat-start="(xkey,xvalue) in value">{{key}}</td>
-                <td>{{xkey}}</td>
-                <td>{{xvalue.Debit}}</td>
-                <td>{{xvalue.Credit}}</td>
-                < br/>
-                <td ng-repeat-end></td>-->
-
+                        <tr ng-repeat="(xkey,xvalue) in value">
+                            <td width="200">{{xkey}}</td>
+                            <td width="200">{{xvalue.Debit}}</td>
+                            <td width="200">{{xvalue.Credit}}</td>
+                        </tr>
+                    </table>
+                </td>
             </tr>
-
-
-
         </table>
-
-
-
-
-
-
-
-
-        <table>
-            <tr></tr>
-        </table>
-
-
-
-
-
-
-        <!--<tr ng-repeat="(key,value) in generalJournal">
-                <td>{{key}}</td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>            
-            -->
-
-
     </div>
+
+    <div ng-controller="Ledger-Posting">
+        <div ng-repeat="(key,value) in ledgerPosting">
+            {{key}} --- {{value}}
+
+           
+            <table>
+                <tr>
+                    <td>Debit</td>
+                    <td>Credit</td>
+                </tr>
+
+                <tr ng-repeat="(keyN , valueN) in value">
+                    <td>{{valueN.Debit}}</td>
+                    <td>{{valueN.Credit}}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
 
 </body>
 
