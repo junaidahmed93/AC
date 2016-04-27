@@ -1,3 +1,8 @@
 tr,td,table{
     border: 1px solid red;
 }
+
+td.indent{
+    padding: 5px;
+    text-indent: 4.5em;
+}

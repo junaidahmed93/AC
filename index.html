@@ -22,7 +22,7 @@
 
 
         <br> <br>
-        <table width="100%">
+        <table width="50%">
 
             <tr ng-repeat="(key,value) in generalJournal">
                 <td>{{key}}</td>
@@ -30,13 +30,13 @@
                     <table width="100%">
                         <tr ng-if="$index == 0">
                             <th width="200">Title</th>
-                            <th width="200">Debit</th>
-                            <th width="200">Credit</th>
+                            <th width="50">Debit</th>
+                            <th width="50">Credit</th>
                         </tr>
                         <tr ng-repeat="(xkey,xvalue) in value">
-                            <td width="200">{{xkey}}</td>
-                            <td width="200">{{xvalue.Debit}}</td>
-                            <td width="200">{{xvalue.Credit}}</td>
+                            <td width="200" class="indent">{{xkey}}</td>
+                            <td width="50">{{xvalue.Debit}}</td>
+                            <td width="50">{{xvalue.Credit}}</td>
                         </tr>
                     </table>
                 </td>
@@ -45,26 +45,32 @@
     </div>
 
     <div ng-controller="Ledger-Posting">
-        <div ng-repeat="(key,value) in ledgerPosting">
+        <div ng-repeat="(key,value) in testing">
             {{key}} --- {{value}}
 
-           
+
             <table>
                 <tr>
                     <td>Debit</td>
+                    <td>Balance</td>
                     <td>Credit</td>
+                    <td>Balance</td>
                 </tr>
 
                 <tr ng-repeat="(keyN , valueN) in value">
                     <td>{{valueN.Debit}}</td>
-                    <td>{{valueN.Credit}}</td>
+                     <td > {{valueN.DebitBalance}}</strong></td>
+                    <td>{{valueN.Credit}}</td>                   
+                    <td >{{valueN.CreditBalance}}</td>
                 </tr>
-                <tr>
-                    <td></td>
-                </tr>
+
+
             </table>
 
         </div>
+
+
+      
     </div>
 
 
