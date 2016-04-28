@@ -69,7 +69,27 @@
 
         </div>
 
-
+        <div>
+            <table>
+                <tr>
+                    <td>Account Title</td>
+                    <td>Debit</td>
+                    <td>Credit</td>
+                </tr>
+                <tr ng-repeat="(key,value) in testing">
+                    <td>{{key}}</td>
+                    
+                    <td ng-repeat="(keyN , valueN) in value" ng-if="$last">  {{valueN.FinalDebitBalance}} </td>
+                     <td ng-repeat="(keyN , valueN) in value" ng-if="$last">  {{valueN.FinalCreditBalance}} </td>
+                    
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>{{TotalDebitofTrailBalance}}</td>
+                    <td>{{TotalCreditofTrailBalance}}</td>
+                </tr>
+            </table>
+        </div>
       
     </div>
 
